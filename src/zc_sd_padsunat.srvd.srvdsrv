@@ -1,0 +1,10 @@
+@EndUserText.label: 'CDS SD - Padrones de Sunnat'
+define service ZC_SD_PADSUNAT {
+  expose ZC_C_PADSUNAT       as PADSUNAT;
+  expose ZC_I_PAYMPITEM      as PAYMPITEM;
+  expose ZC_I_SOCIEDAD       as PGSOCIEDAD;
+  expose ZC_I_Supplier_xruc  as SUPPLIERXRUC;
+  expose ZC_I_Supplier_itr   as SUPPLIERXITR;
+  expose ZC_I_SUPPLIER_ITRV2 as SUPPLIERXITRV;
+  expose Z_I_PDBEXPOR        as PDBEXPOR;
+}

@@ -1,0 +1,27 @@
+managed implementation in class zbp_c_i_padsunat unique;
+strict;// ( 1 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZC_I_PADSUNAT alias PADSUNAT
+persistent table yfi_t_0082
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  field ( readonly:update )  Stcd1, Tipo;
+  field ( mandatory )  Name1, Fecha;
+  create;
+  update;
+  delete;
+
+  static action fileUpload parameter ZC_BO_PADSUNAT_ABSTRACT;
+  static action getpad     parameter ZC_BO_PADSUNAT_ABSTRACT   result [0..*] ZA_PAD_SUNAT_C;
+  static action settax     parameter ZA_PAD_SUNAT_R; //acción para actualizar padrones
+  static action setpdbexp  parameter YFI_T_DUA; //acción para actualizar pdbexportación
+  static action setcecond  parameter ZC_AE_UPDCECO; //acción para actualizar cecos
+  static action setcecoinvblq  parameter ZC_AE_UPDCECO; //acción para actualizar cecos invertir bloqueo
+
+
+
+  validation validateDates on save { field Fecha; }
+  mapping for yfi_t_0082 corresponding;
+}

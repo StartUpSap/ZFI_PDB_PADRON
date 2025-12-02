@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+    typeName: 'Padron de Sunnat',
+    typeNamePlural: 'Padrones de Sunnat',
+    title: {
+        type: #STANDARD,
+        label: 'Nº ident.fis.1',
+        value: 'stcd1'
+    }
+}
+
+ }
+annotate entity ZC_C_PADSUNAT with
+{
+  @UI.facet: [{
+        purpose: #STANDARD,
+        label: 'Nº ident.fis.1',
+        type: #IDENTIFICATION_REFERENCE,
+        position: 10
+    }]
+     @UI:{
+      lineItem: [{ position: 10 },
+      { type: #FOR_ACTION, dataAction: 'fileUpload', label: 'Cargar Fichero', position: 10 } ],
+      identification: [{ position: 10 }]
+  }
+
+
+
+  @Search.defaultSearchElement: true
+  Stcd1;
+
+  @EndUserText.label: 'Tipo de Padrón SUNAT'
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20 ,cssDefault:{ width: '180px' }
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  Tipo;
+
+  @EndUserText.label: 'Nombre Padrón'
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30 ,cssDefault:{ width: '160px' }
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  Name1;
+
+  @EndUserText.label: 'Fecha de contabilización'
+  @UI.identification: [ {
+    position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40, cssDefault:{ width: '200px' }
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  Fecha;
+
+}
