@@ -1,0 +1,4 @@
+@EndUserText.label: 'persona'
+define service ZSB_PERSONA {
+  expose ZCDS_C_PERSONA as persona;
+}

@@ -1,0 +1,38 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+    typeName: 'Configuración de Persona',
+    typeNamePlural: 'Configuración de Persona',
+    title: {
+        type: #STANDARD,
+        label: 'DNI',
+        value: 'Dni'
+          }
+  }
+ }
+
+annotate entity ZCDS_C_PERSONA
+    with 
+{
+  
+    @EndUserText.label: 'DNI'
+  @UI.facet: [{ purpose: #STANDARD, 
+  label: 'DNI', type: #IDENTIFICATION_REFERENCE, 
+  position: 10 }] 
+@UI:{
+
+      lineItem: [{ position: 10 },
+      { type: #FOR_ACTION, dataAction: 'limpiar_edad', label: 'limpiar ocupación', position: 10 } ],
+      identification: [{ position: 10 }]
+  }   
+   @Search.defaultSearchElement: true 
+   Dni; 
+   
+   @EndUserText.label: 'Nombre' @UI.identification: 
+   [ { position: 20 } ] @UI.lineItem: [ { position: 
+   20 ,cssDefault:{ width: '120px' } } ] 
+   @UI.selectionField: [ { position: 20 } ] 
+   Nombre;
+    
+}

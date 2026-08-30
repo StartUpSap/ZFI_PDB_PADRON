@@ -1,0 +1,10 @@
+projection;
+strict ( 1 );
+
+define behavior for ZCDS_C_PERSONA //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+  use action limpiar_edad ;
+}

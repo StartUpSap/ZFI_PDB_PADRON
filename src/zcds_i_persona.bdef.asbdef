@@ -1,0 +1,15 @@
+managed implementation in class zbp_cds_i_persona unique;
+strict ( 2 );
+
+define behavior for ZCDS_I_PERSONA //alias <alias_name>
+persistent table zdtpersona
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly:create ) Dni;
+  action limpiar_edad ;
+  }
